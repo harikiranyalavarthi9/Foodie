@@ -1,1 +1,1 @@
-# fullstack-project
+# foodie-fullstack-project
