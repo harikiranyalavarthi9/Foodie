@@ -72,9 +72,10 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
         }
     }
 
-}]).controller('DishDetailController', ['$scope', 'menuFactory', function ($scope, menuFactory) {
+}]).controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function ($scope, $routeParams, menuFactory) {
 
-    $scope.dish= menuFactory.getDish(3);
+    var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        
+    $scope.dish = dish;
 
 }]).controller('DishCommentController', ['$scope', function ($scope) {
 
@@ -82,7 +83,7 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 
     vm.formComment = {
         author: "",
-        rating: "5",
+        rating: "",
         comment: ""
     };
 
@@ -91,7 +92,7 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
         vm.dish.comments.push(vm.formComment);
         vm.formComment = {
             author: "",
-            rating: "5",
+            rating: "",
             comment: ""
         };
         vm.commentForm.$setPristine();
