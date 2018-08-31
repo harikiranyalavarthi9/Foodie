@@ -1,7 +1,3 @@
-/**
- * Created by marcos on 19/06/16.
- */
-
 'use strict';
 
 var app = angular.module('confusionApp');
@@ -55,7 +51,7 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 
     vm.sendFeedback = function () {
         console.log(vm.feedback);
-        if (vm.feedback.agree && (vm.feedback.mychannel == "") && !vm.feedback.mychannel) {
+        if (vm.feedback.agree && (vm.feedback.mychannel === "") && !vm.feedback.mychannel) {
             vm.invalidChannelSelection = true;
             console.log('incorrect');
         }
@@ -70,12 +66,11 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
             vm.feedbackForm.$setPristine();
             console.log(vm.feedback);
         }
-    }
+    };
 
-}]).controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function ($scope, $routeParams, menuFactory) {
+}]).controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function ($scope, $stateParams, menuFactory) {
 
-    var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        
-    $scope.dish = dish;
+    $scope.dish = menuFactory.getDish(parseInt($stateParams.id, 10));
 
 }]).controller('DishCommentController', ['$scope', function ($scope) {
 
@@ -83,7 +78,7 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 
     vm.formComment = {
         author: "",
-        rating: "",
+        rating: "5",
         comment: ""
     };
 
@@ -92,9 +87,9 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
         vm.dish.comments.push(vm.formComment);
         vm.formComment = {
             author: "",
-            rating: "",
+            rating: "5",
             comment: ""
         };
         vm.commentForm.$setPristine();
-    }
+    };
 }]);
