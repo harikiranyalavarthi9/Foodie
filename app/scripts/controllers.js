@@ -5,13 +5,20 @@ var app = angular.module('confusionApp');
 app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, menuFactory) {
 
     $scope.tab = 1;
-
     $scope.dishes = [];
+    $scope.showMenu = false;
+    $scope.message = "Loading ...";
 
     menuFactory.getDishes()
-    .then(function(response) {
-        $scope.dishes = response.data;
-    });
+    .then(
+        function(response) {
+            $scope.dishes = response.data;
+            $scope.showMenu = true;
+        },
+        function(response) {
+            $scope.message = "Error: "+response.status+" "+response.statusText;
+        }
+    );
 
     $scope.filtText = '';
 
@@ -72,11 +79,19 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 }]).controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function ($scope, $stateParams, menuFactory) {
 
     $scope.dish = {};
+    $scope.showDish = false;
+    $scope.message = "Loading ...";
+
     menuFactory.getDish(parseInt($stateParams.id, 10))
-    .then(function(response) {
-        $scope.dish = response.data;
-        $scope.showDish = true;
-    });
+    .then(
+        function(response) {
+            $scope.dish = response.data;
+            $scope.showDish = true;
+        },
+        function(response) {
+            $scope.message = "Error: "+response.status +" "+response.statusText;
+        }
+    );
 
 }]).controller('DishCommentController', ['$scope', function ($scope) {
 
@@ -99,12 +114,19 @@ app.controller("MenuController", ['$scope', 'menuFactory', function ($scope, men
 }]).controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function ($scope, menuFactory, corporateFactory) {
 
     $scope.featuredDish = {};
+    $scope.showDish = false;
+    $scope.message = "Loading ...";
 
     menuFactory.getDish(0)
-    .then(function(response) {
-        $scope.featuredDish = response.data;
-        $scope.showDish = true;
-    });
+    .then(
+        function(response) {
+            $scope.featuredDish = response.data;
+            $scope.showDish = true;
+        },
+        function(response) {
+            $scope.message = "Error: "+response.status+" "+response.statusText;
+        }
+    );
 
     $scope.featuredPromotion = menuFactory.getPromotion(0);
     $scope.executiveChef = corporateFactory.getLeader(3);
