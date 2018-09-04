@@ -1,16 +1,16 @@
 {
-  "name": "conFusion",
+  "name": "foodie",
   "version": "1.0.0",
   "description": "Website for an awesome restaurant",
   "main": "index.html",
   "moduleType": [],
   "keywords": [
-    "conFusion",
-    "Fusion",
-    "Restaurant"
+    "foodie",
+    "yelp",
+    "restaurant"
   ],
   "authors": [
-    "Jogesh Muppala"
+    "Hari Kiran Yalavarthi"
   ],
   "license": "MIT",
   "homepage": "",
