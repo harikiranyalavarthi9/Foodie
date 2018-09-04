@@ -9,8 +9,8 @@ angular.module('confusionApp', ['ui.router']).config(function ($stateProvider, $
                 'header': {
                     templateUrl: 'views/header.html'
                 },
-                'content': {
-                    template: '<h1>To be Completed</h1>',
+                'content@': {
+                    templateUrl: 'views/home.html',
                     controller: 'IndexController'
                 },
                 'footer': {
@@ -23,7 +23,8 @@ angular.module('confusionApp', ['ui.router']).config(function ($stateProvider, $
             url: 'aboutus',
             views: {
                 'content@': {
-                    template: '<h1>To be Completed</h1>'
+                    templateUrl: 'views/aboutus.html',
+                    controller: 'AboutController'
                 }
             }
         })
