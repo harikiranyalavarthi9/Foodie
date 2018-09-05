@@ -1,6 +1,6 @@
 'use strict';
 
-describe('conFusion App E2E Testing', function () {
+describe('Foodie App E2E Testing', function () {
 
     it('should automatically redirect to / when location hash/fragment is empty', function () {
 
@@ -25,14 +25,13 @@ describe('conFusion App E2E Testing', function () {
         });
 
         it('should have a name', function () {
-            var name = element(by.binding('dish.name'));
+            var name = element(by.binding('featuredDish.name'));
             expect(name.getText()).toEqual('Uthapizza Hot 4.99');
         });
 
         it('should show the number of comments as', function () {
             expect(element.all(by.repeater('comment in dish.comments'))
                 .count()).toEqual(0);
-
         });
     });
 
