@@ -1,9 +1,7 @@
-# Confusion
-Confusion is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application for an indian-based restaurant called confusion that aims to show restaurant's aviable dishes and make users able to favorite and comment them. The application is built on the [MEAN Stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) of technologies and using RESTful web services architecture.
+# Foodie
+Foodie is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application that aims to show restaurant's available dishes and make users able to favorite and comment them. The application is built on the [MEAN Stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) of technologies and using RESTful web services architecture.
 
 The application was built using [Node.js](https://nodejs.org/en/) runtime. It used [MongoDB](https://www.mongodb.com/) as the underlying database system. It uses [Express](https://expressjs.com/) framework and [Mongoose ODM](http://mongoosejs.com/) toolkit. And in the front-end side, it uses [AngularJS](https://angularjs.org/) to make it [SPA](https://en.wikipedia.org/wiki/Single-page_application) and [Bootstrap](http://getbootstrap.com/) framework.
-
-This is my project for the [Coursera's Full Stack Web Development Specialization](https://www.coursera.org/specializations/full-stack-mobile-app-development) created by [Hong Kong University of Science and Technology](http://www.ust.hk/).
 
 ### Features:
 - [Single page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application).
