@@ -34,7 +34,7 @@ You have to install the following to be able to run and test the application:
 3. Create a new folder with the name ```data``` anywhere in your machine and run:
     ```bash
     mongod --dbpath=data
-    use conFusion
+    use foodie
     ```
 4. Run the application and go to [localhost:3443](http://127.0.0.1:3443/) to see the application running.
     ```bash
